@@ -1,12 +1,20 @@
 {
   "name": "selenium",
   "version": "1.0.0",
-  "description": "Trabajo practico de selenium",
+  "description": "",
+  "main": "index.html",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "serve"
   },
-  "dependencies": {
-    "serve": "^10.0.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miranda-03/Selenium.git"
   },
-  "author": "Yo"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Miranda-03/Selenium/issues"
+  },
+  "homepage": "https://github.com/Miranda-03/Selenium#readme"
 }
