@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/Miranda-03/Selenium.git"
   },
+  "dependencies": {
+    "serve": "^10.0.1"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
