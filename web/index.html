@@ -1,25 +1,27 @@
-< !DOCTYPE html>
-    <html lang="en">
-    <meta charset="UTF-8">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="">
-    <style>
-    </style>
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+</style>
 
-    <body>
+<body>
 
-        <div id="nav">
-            <div id="buscador">
-                <input type="text">
-                <button id="boton-buscar">Buscar</button>
-            </div>
-            <button id="boton-login">Log in</button>
+    <div id="nav">
+        <div id="buscador">
+            <input type="text" id="inputBuscador">
+            <button id="boton-buscar" onclick="Buscador()">Buscar</button>
         </div>
+        <a href="login.html">Log in</a>
+        <h3 id="malBuscado"></h3>
+    </div>
 
-        <img src="mb">
-        <button id="boton-formulario">Formulario</button>
+    <img src="mb">
+    <a href="formulario.html">Formulario</a>
 
-    </body>
-    <script src="logic.js"></script>
-    </html>
+</body>
+<script src="logic.js"></script>
+
+</html>

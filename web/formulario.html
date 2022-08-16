@@ -1,4 +1,4 @@
-< !DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
     <meta charset="UTF-8">
     <title>Page Title</title>
@@ -11,19 +11,21 @@
 
         <div id="nav">
             <div id="buscador">
-                <input type="text">
-                <button id="boton-buscar">Buscar</button>
+                <input type="text" id="inputBuscador">
+                <button id="boton-buscar" onclick="Buscador()">Buscar</button>
             </div>
-            <button id="boton-login">Log in</button>
+            <a href="login.html">Log in</a>
+            <h3 id="malBuscado"></h3>
         </div>
 
         <div id="form">
             <input type="text" id="in-1">
-            <input type="text" id="in-1">
-            <input type="text" id="in-1">
-            <input type="text" id="in-1">
+            <input type="text" id="in-2">
+            <input type="text" id="in-3">
+            <input type="text" id="in-4">
         </div>
-        <button id="boton-formulario">Enviar</button>
+        <button id="boton-formulario" onclick="formularioEnter()">Enviar</button>
+        <h3 id="datos-cargados"></h3>
 
     </body>
     <script src="logic.js"></script>
