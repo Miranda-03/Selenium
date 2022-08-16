@@ -1,18 +1,17 @@
-name: heroku and testing
+name: Deploy
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: heroku git:remote -a selenium-tp
       - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "selenium-tp"
+          heroku_app_name: "selenium-tp" #Must be unique in Heroku
           heroku_email: "martin.miranda.2004@gmail.com"
-
