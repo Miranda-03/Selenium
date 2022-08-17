@@ -9,9 +9,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      - name: Subir la web a Heroku
+        uses: actions/checkout@v2
+        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "selenium-tp" #Must be unique in Heroku
           heroku_email: "martin.miranda.2004@gmail.com"
+      - name: Python
+        uses: actions/setup-python@v2
+        - name: Install dependencies
+          run: |
+            python -m pip install --upgrade pip
+            pip install selenium
+      - name: execute py script
+        run: |
+          python pruebaSelenium.py
