@@ -5,12 +5,10 @@ function formularioEnter() {
     let primero = document.getElementById("in-1").value
     let segundo = document.getElementById("in-2").value
     let tercero = document.getElementById("in-3").value
-    let cuarto  = document.getElementById("in-4").value
     
     primero === document.getElementById("in-1").value && 
     segundo === document.getElementById("in-2").value &&
-    tercero === document.getElementById("in-3").value &&
-    cuarto  === document.getElementById("in-4").value ? 
+    tercero === document.getElementById("in-3").value ? 
     datos.innerHTML = "datos cargados" : 
     datos.innerHTML = "datos no cargados"
        
@@ -23,8 +21,7 @@ function loginCargar(){
     let nombre = document.getElementById("input-nombre").value
     let contraseña = document.getElementById("input-pass").value
 
-    nombre === "alumno" &&
-    contraseña == "123" ?
+    nombre === "alumno" && contraseña == "123" ?
     datos.innerHTML = "logeado" :
     datos.innerHTML = "datos incorrectos"
 

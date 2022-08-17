@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <meta charset="UTF-8">
-    <title>Formulario</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="">
-    <style>
-    </style>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Formulario</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+</style>
 
-    <body>
+<body>
 
-        <div id="nav">
-            <div id="buscador">
-                <input type="text" id="inputBuscador">
-                <button id="boton-buscar" onclick="Buscador()">Buscar</button>
-            </div>
-            <a href="login.html">Log in</a>
-            <h3 id="malBuscado"></h3>
+    <div id="nav">
+        <div id="buscador">
+            <input type="text" id="inputBuscador">
+            <button id="boton-buscar" onclick="Buscador()">Buscar</button>
         </div>
+        <a href="login.html">Log in</a>
+        <h3 id="malBuscado"></h3>
+    </div>
 
-        <form id="form">
-            <label for="in-1">Nombre:</label><br>
-            <input type="text" id="in-1"><br>
-            <label for="in-2">Apellido:</label><br>
-            <input type="text" id="in-2"><br>
-            <label for="in-3">Edad:</label><br>
-            <input type="number" id="in-3">
-            <input type="text" id="in-4">
+    <form id="form">
+        <label for="in-1">Nombre:</label><br>
+        <input type="text" id="in-1"><br>
+        <label for="in-2">Apellido:</label><br>
+        <input type="text" id="in-2"><br>
+        <label for="in-3">Edad:</label><br>
+        <input type="number" id="in-3"><br>
+        <form>
+            <label>Genero: </label>
+            <select id="dropdown">
+                <option value="Masculino"> Masculino
+                </option>
+                <option value="Femenino"> Femenino
+                </option>
+            </select>
         </form>
-        <button id="boton-formulario" onclick="formularioEnter()">Enviar</button>
-        <h3 id="datos-cargados"></h3>
+    </form>
+    <button id="boton-formulario" onclick="formularioEnter()">Enviar</button>
+    <h3 id="datos-cargados"></h3>
 
-    </body>
-    <script src="logic.js"></script>
+</body>
+<script src="logic.js"></script>
 
-    </html>
+</html>

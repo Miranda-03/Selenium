@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import Select
 import time
 
 chrome_options = webdriver.ChromeOptions()
@@ -22,10 +23,10 @@ try:
     wait = WebDriverWait(driver, 10)
     driver.get("https://selenium-tp.herokuapp.com/")  
 
-    wait.until(EC.title_is('Home'))
+    wait.until(EC.title_is('Selenium'))
 
 
-    boton_formulario = driver.find_element((By.ID, "boton-ir-formulario"))
+    boton_formulario = driver.find_element(By.ID, "boton-ir-formulario")
     
 
     time.sleep(5)
@@ -38,10 +39,24 @@ try:
 
 
     inputs_formulario = driver.find_element(By.ID, "form")
-    input_1 = inputs_formulario.find_element(By.ID, "in-1")
+
+    input_nombre = inputs_formulario.find_element(By.ID, "in-1")
+    input_apellido = inputs_formulario.find_element(By.ID, "in-2")
+    input_edad = inputs_formulario.find_element(By.ID, "in-3")
+
     time.sleep(5)
-    input_1.send_keys('Agustin')
-    time.sleep(3)
+    input_nombre.send_keys('Agustin')
+    time.sleep(1)
+    input_apellido.send_keys('Torti')
+    time.sleep(1)
+    input_edad.send_keys(18)
+    time.sleep(2)
+
+    x = driver.find_element(By.ID, "dropdown")
+    drop = Select(x)
+
+    drop.select_by_value("Masculino")
+    time.sleep(4)
 
 finally:
     driver.quit()
