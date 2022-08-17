@@ -16,27 +16,29 @@ driver = webdriver.Remote(
 )
 
 urlHome = "https://selenium-tp.herokuapp.com/"
-urlFormulario = "https://selenium-tp.herokuapp.com/formulario"
-urlLogin = "https://selenium-tp.herokuapp.com/login"
+#urlFormulario = "https://selenium-tp.herokuapp.com/formulario"
+#urlLogin = "https://selenium-tp.herokuapp.com/login"
 
-try: 
+try:
     wait = WebDriverWait(driver, 10)
-    driver.get("https://selenium-tp.herokuapp.com/")  
+    driver.get(urlHome)
+
+    # ------------ Home (index.html) ------------
 
     wait.until(EC.title_is('Selenium'))
 
-
     boton_formulario = driver.find_element(By.ID, "boton-ir-formulario")
-    
 
     time.sleep(5)
     boton_formulario.send_keys(Keys.ENTER)
-        
+
+    """
     get_url = driver.current_url
     print(get_url)
+    """
+    # ------------ Parte del formulario ------------
 
     wait.until(EC.title_is('Formulario'))
-
 
     inputs_formulario = driver.find_element(By.ID, "form")
 
@@ -54,9 +56,49 @@ try:
 
     x = driver.find_element(By.ID, "dropdown")
     drop = Select(x)
-
     drop.select_by_value("Masculino")
     time.sleep(4)
+
+    driver.find_element(By.ID, "boton-formulario").send_keys(Keys.ENTER)
+    time.sleep(4)
+
+    driver.find_element(By.TAG_NAME, "a").send_keys(Keys.ENTER)
+    time.sleep(5)
+
+    # ------------ Parte del Log in ------------
+
+    wait.until(EC.title_is('Log in'))
+
+    input_usuario = driver.find_element(By.ID, "input-nombre")
+    input_usuario = driver.find_element(By.ID, "input-pass")
+
+    input_usuario.send_keys("alumno")
+    time.sleep(1)
+    input_apellido.send_keys(123)
+    time.sleep(2)
+
+    driver.find_element(By.ID, "boton-form-login").send_keys(Keys.ENTER)
+    time.sleep(3)
+
+    # ------------ Parte de navegación ------------
+
+    driver.find_element(By.ID, "inputBuscador").send_keys("home")
+    driver.find_element(By.ID, "boton-buscar").send_keys(Keys.ENTER)
+
+    wait.until(EC.title_is('Selenium'))
+    time.sleep(2)
+
+    driver.find_element(By.ID, "inputBuscador").send_keys("formulario")
+    driver.find_element(By.ID, "boton-buscar").send_keys(Keys.ENTER)
+
+    wait.until(EC.title_is('Formulario'))
+    time.sleep(2)
+
+    driver.find_element(By.ID, "inputBuscador").send_keys("log in")
+    driver.find_element(By.ID, "boton-buscar").send_keys(Keys.ENTER)
+
+    wait.until(EC.title_is('Log in'))
+    time.sleep(2)
 
 finally:
     driver.quit()
