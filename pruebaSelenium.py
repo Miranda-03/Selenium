@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.set_capability("browserVersion", "67")
@@ -11,6 +12,6 @@ driver = webdriver.Remote(
 )
 driver.get("https://selenium-tp.herokuapp.com/")
 
-driver.find_element(By.ID, "boton-ir-formulario").send_keys(Keys.ENTER)
+el = WebDriverWait(driver, timeout=3).until(lambda driver: driver.find_element(By.ID, "boton-ir-formulario").send_keys(Keys.ENTER))
 
 driver.quit()  
