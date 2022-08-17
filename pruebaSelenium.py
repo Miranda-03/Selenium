@@ -70,11 +70,11 @@ try:
     wait.until(EC.title_is('Log in'))
 
     input_usuario = driver.find_element(By.ID, "input-nombre")
-    input_usuario = driver.find_element(By.ID, "input-pass")
+    input_contraseña = driver.find_element(By.ID, "input-pass")
 
     input_usuario.send_keys("alumno")
     time.sleep(1)
-    input_apellido.send_keys(123)
+    input_contraseña.send_keys(123)
     time.sleep(2)
 
     driver.find_element(By.ID, "boton-form-login").send_keys(Keys.ENTER)
