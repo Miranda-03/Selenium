@@ -97,7 +97,7 @@ def run_session(cap):
         wait.until(EC.title_is('Selenium'))
 
         boton_formulario = driver.find_element(By.ID, "boton-ir-formulario")
-
+        driver.save_screenshot('screenshots/home.png')
         time.sleep(5)
         boton_formulario.send_keys(Keys.ENTER)
 
@@ -129,6 +129,7 @@ def run_session(cap):
         time.sleep(4)
 
         driver.find_element(By.ID, "boton-formulario").send_keys(Keys.ENTER)
+        driver.save_screenshot('screenshots/formulario.png')
         time.sleep(4)
 
         driver.find_element(By.TAG_NAME, "a").send_keys(Keys.ENTER)
@@ -147,6 +148,7 @@ def run_session(cap):
         time.sleep(2)
 
         driver.find_element(By.ID, "boton-form-login").send_keys(Keys.ENTER)
+        driver.save_screenshot('screenshots/login.png')
         time.sleep(3)
 
         # ------------ Parte de navegación ------------
